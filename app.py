@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 import secrets
 from pathlib import Path
@@ -164,6 +165,8 @@ def index():
         bank=summaries[DEFAULT_BANK_ID],
         unified=summarized_unified_bank(),
         default_bank_id=DEFAULT_BANK_ID,
+        test_api_base_url=os.environ.get("MODELTRACE_API_BASE_URL", ""),
+        test_api_model=os.environ.get("MODELTRACE_API_MODEL", ""),
     )
 
 
